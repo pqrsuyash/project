@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapido - Bike Taxi Service</title>
+    <style>
+        /* CSS styles for responsiveness */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .service {
+            width: 30%;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            .service {
+                width: 45%;
+            }
+        }
+        @media screen and (max-width: 576px) {
+            .service {
+                width: 100%;
+            }
+        }
+        .sub-page {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Rapido - Bike Taxi Service</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('login')">Login</a></li>
+                <li><a href="#" onclick="showPage('feedback')">Feedback</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div id="home" class="sub-page">
+            <h2>Home</h2>
+            <p>Welcome to Rapido - your bike taxi service.</p>
+        </div>
+        <div id="about" class="sub-page">
+            <h2>About Us</h2>
+            <p>Learn more about our bike taxi service.</p>
+        </div>
+        <div id="login" class="sub-page">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div id="feedback" class="sub-page">
+            <h2>Feedback</h2>
+            <p>We'd love to hear from you. Please leave your feedback below:</p>
+            <textarea rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all sub-pages
+            var pages = document.getElementsByClassName('sub-page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+            // Show the selected page
+            var selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
