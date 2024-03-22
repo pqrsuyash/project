@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxi Service</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+    function navigateTo(url) {
+        document.body.style.opacity = '0'; // Fade out the page
+        setTimeout(function() {
+            window.location.href = url; // Redirect to the desired page
+        }, 500); // Wait for 0.5 seconds (adjust the delay as needed)
+    }
+    function goToLoginPage() {
+        navigateTo('login.html');
+    }
+</script>
+</head>
+<body>
+<div class="container">
+    <h2>Welcome to Taxi Service</h2>
+    <div class="options">
+        <div class="registration">
+            <h3>Registration</h3>
+            <button class="btn btn-user" onclick="navigateTo('user_registration.html')">Register as User</button>
+            <button class="btn btn-rider" onclick="navigateTo('rider_registration.html')">Register as Rider</button>
+        </div>
+        <div class="login">
+            <h3>Login</h3>
+            <button class="btn btn-login" onclick="navigateTo('login.html')">Login</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
